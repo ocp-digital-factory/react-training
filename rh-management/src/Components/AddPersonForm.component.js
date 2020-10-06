@@ -6,11 +6,10 @@ const AddPersonForm = props => {
 
   const handleClick = () => addNewPerson(newPerson);
 
-  const handleInputChange = e =>{
-    const {name, value} = e.target;
+  const handleInputChange = e => {
+    const { name, value } = e.target;
     setNewPerson({ ...newPerson, [name]: value });
-  }
-    
+  };
 
   return (
     <form>
