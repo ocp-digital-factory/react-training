@@ -10,3 +10,9 @@ thead {
 td {
   border: 1px solid #333;
 }
+
+form {
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+}

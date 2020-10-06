@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import Person from "./Person.component";
+import AddPersonFrom from "./AddPersonForm.component";
 import data from "./constants";
 
 const PersonsList = () => {
   const [persons, setPersons] = useState(data);
+
+  const handleAddNewPerson = newPerson => {
+    setPersons([...persons, newPerson]);
+  };
+
   return (
     <>
       <h3>Persons List</h3>
+      <AddPersonFrom addNewPerson={handleAddNewPerson} />
       <table>
         <thead>
           <tr>
