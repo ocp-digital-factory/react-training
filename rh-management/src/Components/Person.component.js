@@ -1,14 +1,16 @@
 import React from "react";
+import TableCell  from "@material-ui/core/TableCell";
+import TableRow from "@material-ui/core/TableRow";
 
 const Person = props => {
   const { fullName, phoneNumber, email, job } = props;
   return (
-    <tr>
-      <td>{fullName}</td>
-      <td>{phoneNumber}</td>
-      <td>{email}</td>
-      <td>{job}</td>
-    </tr>
+    <TableRow>
+      <TableCell>{fullName}</TableCell>
+      <TableCell>{phoneNumber}</TableCell>
+      <TableCell>{email}</TableCell>
+      <TableCell>{job}</TableCell>
+    </TableRow>
   );
 };
 
