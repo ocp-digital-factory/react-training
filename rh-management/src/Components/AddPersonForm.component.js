@@ -12,7 +12,7 @@ const FormCustomInput = props => {
   console.log(props);
   const { children, ...otherProps } = props;
   return (
-    <Grid item xs="12" sm="12" md="6" lg="4" xl="3">
+    <Grid item xs={12} sm={12} md={12} lg={4} xl={3}>
       <TextField fullWidth variant="outlined" required size="small" {...otherProps}>
         {children}
       </TextField>

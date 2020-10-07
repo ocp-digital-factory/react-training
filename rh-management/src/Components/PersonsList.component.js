@@ -11,7 +11,7 @@ import {
   TableBody,
   TableRow,
   TableCell,
-  Paper,
+  Paper
 } from "@material-ui/core";
 import ArrowBack from "@material-ui/icons/ArrowBack";
 
@@ -32,7 +32,7 @@ const PersonsList = () => {
         Persons List
       </Typography>
       <AddPersonFrom addNewPerson={handleAddNewPerson} />
-      <br/>
+      <br />
       <Paper elevation={3}>
         <Table>
           <TableHead>
@@ -49,6 +49,7 @@ const PersonsList = () => {
               <TableCell>
                 <strong>Job</strong>
               </TableCell>
+              <TableCell />
             </TableRow>
           </TableHead>
           <TableBody>
