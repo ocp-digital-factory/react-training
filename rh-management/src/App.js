@@ -8,27 +8,31 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./utils/theme";
+import { Provider } from "react-redux";
+import store from "./store/storeCreator"
 
 function App() {
   return (
     <Router>
-      <ThemeProvider theme={theme}>
-        <AppBar />
-        <br />
-        <Container>
-          <Switch>
-            <Route path="/profile/:email">
-              <Profile />
-            </Route>
-            <Route path="/persons">
-              <PersonsList />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </Container>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <AppBar />
+          <br />
+          <Container>
+            <Switch>
+              <Route path="/profile/:email">
+                <Profile />
+              </Route>
+              <Route path="/persons">
+                <PersonsList />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </Container>
+        </ThemeProvider>
+      </Provider>
     </Router>
   );
 }

@@ -2,8 +2,8 @@ import React from "react";
 import { Paper, Typography, IconButton, Avatar, Grid } from "@material-ui/core";
 import { useHistory, useParams } from "react-router-dom";
 import { ArrowBack, Phone, AlternateEmail, Work } from "@material-ui/icons";
-import data from "./constants";
 import { makeStyles } from "@material-ui/core/styles";
+import { useSelector } from "react-redux";
 
 const useStyle = makeStyles(theme => ({
   paper: { padding: theme.spacing(2) },
@@ -20,13 +20,16 @@ const getAvatarContent = fullName =>
   fullName?.split(" ")?.map(str => str?.substring(0, 1));
 
 const Person = props => {
+
   const history = useHistory();
   const classes = useStyle();
+  const persons = useSelector(state => state.persons);
+
 
   let { email } = useParams();
   if (!email) return "oups!!";
 
-  const profile = data.find(person => person.email === email);
+  const profile = persons.find(person => person.email === email);
   if (!profile) return "oups, unfound profile!!";
 
   return (

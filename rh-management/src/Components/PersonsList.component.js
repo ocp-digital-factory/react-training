@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Person from "./Person.component";
 import AddPersonFrom from "./AddPersonForm.component";
-import data from "./constants";
 import { useHistory } from "react-router-dom";
 import {
   Typography,
@@ -14,14 +13,11 @@ import {
   Paper
 } from "@material-ui/core";
 import ArrowBack from "@material-ui/icons/ArrowBack";
+import { useSelector } from "react-redux";
 
 const PersonsList = () => {
-  const [persons, setPersons] = useState(data);
+  const persons = useSelector(state => state.persons);
   const history = useHistory();
-
-  const handleAddNewPerson = newPerson => {
-    setPersons([...persons, newPerson]);
-  };
 
   return (
     <>
@@ -31,7 +27,7 @@ const PersonsList = () => {
         </IconButton>{" "}
         Persons List
       </Typography>
-      <AddPersonFrom addNewPerson={handleAddNewPerson} />
+      <AddPersonFrom />
       <br />
       <Paper elevation={3}>
         <Table>
