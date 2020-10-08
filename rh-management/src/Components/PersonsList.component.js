@@ -26,7 +26,7 @@ const PersonsList = () => {
   return (
     <>
       <Typography variant="h5" color="primary">
-        <IconButton onClick={() => history.go(-1)}>
+        <IconButton onClick={() => history.push("/")}>
           <ArrowBack />
         </IconButton>{" "}
         Persons List
