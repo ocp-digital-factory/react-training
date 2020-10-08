@@ -16,9 +16,6 @@ function App() {
         <br />
         <Container>
           <Switch>
-            <Route path="/profile/:email">
-              <Profile />
-            </Route>
             <Route path="/persons">
               <PersonsList />
             </Route>
