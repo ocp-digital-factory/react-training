@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import Person from "./Person.component";
 import AddPersonFrom from "./AddPersonForm.component";
 import { useHistory } from "react-router-dom";
@@ -14,10 +14,15 @@ import {
 } from "@material-ui/core";
 import ArrowBack from "@material-ui/icons/ArrowBack";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const PersonsList = () => {
   const persons = useSelector(state => state.persons);
   const history = useHistory();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch({ type: "PERSOND_FETCH_REQUESTED" });
+  }, [dispatch]);
 
   return (
     <>
@@ -50,7 +55,7 @@ const PersonsList = () => {
           </TableHead>
           <TableBody>
             {persons &&
-              persons.map(person => <Person key={person.email} {...person} />)}
+              persons.map(person => <Person key={person.id} {...person} />)}
           </TableBody>
         </Table>
       </Paper>
