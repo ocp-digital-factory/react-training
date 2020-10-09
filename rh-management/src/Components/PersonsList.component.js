@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Person from "./Person.component";
+import Person from "./Person";
 import AddPersonFrom from "./AddPersonForm.component";
 import { useHistory } from "react-router-dom";
 import {

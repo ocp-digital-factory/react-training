@@ -2,7 +2,7 @@ import React from "react";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import { IconButton } from "@material-ui/core";
-import { AccountCircle, DeleteOutline } from "@material-ui/icons";
+import { AccountCircle, Delete } from "@material-ui/icons";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
@@ -25,7 +25,7 @@ const Person = props => {
           <AccountCircle />
         </IconButton>
         <IconButton onClick={handleDeletePerson}>
-          <DeleteOutline />
+          <Delete />
         </IconButton>
       </TableCell>
     </TableRow>
