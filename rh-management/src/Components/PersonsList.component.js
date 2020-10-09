@@ -21,7 +21,7 @@ const PersonsList = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch({ type: "PERSOND_FETCH_REQUESTED" });
+    dispatch({ type: "PERSONS_FETCH_REQUESTED" });
   }, [dispatch]);
 
   return (

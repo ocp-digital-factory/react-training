@@ -20,7 +20,7 @@ function App() {
           <br />
           <Container>
             <Switch>
-              <Route path="/profile/:email">
+              <Route path="/profile/:id">
                 <Profile />
               </Route>
               <Route path="/persons">

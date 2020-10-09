@@ -20,16 +20,14 @@ const getAvatarContent = fullName =>
   fullName?.split(" ")?.map(str => str?.substring(0, 1));
 
 const Person = props => {
-
   const history = useHistory();
   const classes = useStyle();
   const persons = useSelector(state => state.persons);
 
+  let { id } = useParams();
+  if (!id) return "oups!!";
 
-  let { email } = useParams();
-  if (!email) return "oups!!";
-
-  const profile = persons.find(person => person.email === email);
+  const profile = persons.find(person => person.id === id);
   if (!profile) return "oups, unfound profile!!";
 
   return (

@@ -2,13 +2,18 @@ import React from "react";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import { IconButton } from "@material-ui/core";
-import AccountCircle from "@material-ui/icons/AccountCircle";
+import { AccountCircle, DeleteOutline } from "@material-ui/icons";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const Person = props => {
-  const { fullName, phoneNumber, email, job } = props;
+  const { id, fullName, phoneNumber, email, job } = props;
   const history = useHistory();
-  const goToProfilePage = () => history.push(`/profile/${email}`)
+  const goToProfilePage = () => history.push(`/profile/${id}`);
+  const dispatch = useDispatch();
+  const handleDeletePerson = () =>
+    dispatch({ type: "DELETE_PERSON", payload: { id } });
+
   return (
     <TableRow>
       <TableCell>{fullName}</TableCell>
@@ -18,6 +23,9 @@ const Person = props => {
       <TableCell>
         <IconButton onClick={goToProfilePage}>
           <AccountCircle />
+        </IconButton>
+        <IconButton onClick={handleDeletePerson}>
+          <DeleteOutline />
         </IconButton>
       </TableCell>
     </TableRow>
